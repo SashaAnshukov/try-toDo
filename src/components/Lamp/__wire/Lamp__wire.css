@@ -1,0 +1,9 @@
+.Lamp__wire{
+    position: fixed;
+    top:0;
+    right: 190px;
+    width: 4px;
+    height: 60px;
+    background: #000;
+    
+}

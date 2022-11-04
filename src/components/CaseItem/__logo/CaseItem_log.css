@@ -1,0 +1,11 @@
+.CaseItem {
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: -.04em;
+    line-height: 58px;
+    margin: 90px auto 26px;
+    max-width: 600px;
+    padding-top: 0;
+    text-align: center;
+}
+

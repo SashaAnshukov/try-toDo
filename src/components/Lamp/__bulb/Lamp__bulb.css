@@ -1,0 +1,47 @@
+.Lamp__bulb {
+    position: fixed;
+    top:100px;
+    right: 150px;
+    width: 80px;
+    height: 80px;
+    background: rgb(189, 87, 87);
+    border-radius: 50%;
+}
+
+.Lamp__bulb::before {
+    content: '';
+    position: fixed;
+    top:46px;
+    right: 170px;
+    width: 40px;
+    height: 80px;
+    background: rgb(189, 87, 87);
+    border-top: 30px solid #000;
+    border-radius: 10px;
+}
+
+.Lamp__bulb span:nth-child(1) {
+    position: fixed;
+    top:84px;
+    right: 204.8px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(335deg);
+    border-bottom-right-radius: 40px;
+    box-shadow: 20px 20px 0 10px rgb(189, 87, 87);
+}
+
+.Lamp__bulb span:nth-child(2) {
+    position: fixed;
+    top:84px;
+    right: 145.2px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(115deg);
+    border-bottom-right-radius: 40px;
+    box-shadow: 20px 20px 0 10px rgb(189, 87, 87);
+}
