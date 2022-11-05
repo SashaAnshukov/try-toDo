@@ -1,8 +1,15 @@
 import {useState} from 'react';
+import AUDIO from '../../audio/click';
+
 
 function Lamp() {
 
     const [Light, setLight] = useState(false)
+
+    function handleLikeClick() {
+        const soundClick = AUDIO;
+        soundClick.play()
+    }
 
     return (
         <div className="Lamp">
@@ -13,7 +20,7 @@ function Lamp() {
                     <span></span>
                 </div>
                 <label className="Lamp__switch">
-                    <input type="checkbox"/>
+                    <input type="checkbox" onChange={handleLikeClick} />
                     <span className="slider round"></span>
                 </label>
             </div>

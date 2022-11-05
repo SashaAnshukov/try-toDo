@@ -25,6 +25,8 @@ function CaseItem({onCardLike, onCardDelete, card}) {
         <>
             <div className="CaseItem">
                 <header className="CaseItem_Logo">ToDo plan</header>
+                
+                
                 <form className="CaseItem__form" onSubmit={handleSubmit}>
                     <input
                     onChange={handleChangeTarget}
