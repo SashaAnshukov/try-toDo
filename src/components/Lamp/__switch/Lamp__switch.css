@@ -33,17 +33,17 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: rgb(44, 44, 44);
     -webkit-transition: .4s;
     transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: salmon;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px salmon;
 }
 
 input:checked + .slider:before {

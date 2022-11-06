@@ -45,29 +45,6 @@ function CaseItem({onCardLike, onCardDelete, card}) {
                     </button>
                 </form>
             </div>
-
-            <div className="rectangle-item-template">
-                <article className="rectangle">
-                    <button
-                        onClick={handleDeleteClick} 
-                        className = "cardDeleteButtonClassName"
-                        type ="button" aria-label="trash" 
-                        /*className="rectangle__trash opacity-buttons"*/>
-                    </button>
-                    <div className="rectangle__info">
-                        <div className="rectangle__likes">
-                            <button
-                                onClick={handleLikeClick}
-                                className = "cardLikeButtonClassName"
-                                type ="button" aria-label="like" 
-                                /*className="rectangle__mesto-like opacity-like"*/>
-                            </button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-                
-
         </>
     );
 }

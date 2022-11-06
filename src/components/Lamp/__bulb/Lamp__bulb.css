@@ -4,8 +4,9 @@
     right: 150px;
     width: 80px;
     height: 80px;
-    background: rgb(189, 87, 87);
+    background: rgb(216, 210, 131);
     border-radius: 50%;
+    z-index: 2;
 }
 
 .Lamp__bulb::before {
@@ -15,9 +16,34 @@
     right: 170px;
     width: 40px;
     height: 80px;
-    background: rgb(189, 87, 87);
+    background: rgb(216, 210, 131);
     border-top: 30px solid #000;
     border-radius: 10px;
+}
+
+.App.on .Lamp__bulb::after {
+    content: '';
+    position: fixed;
+    top:100px;
+    right: 150px;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(40px);
+    box-shadow: 0 0 50px #fff,
+    0 0 100px #fff,
+    0 0 150px #fff,
+    0 0 200px #fff,
+    0 0 250px #fff,
+    0 0 300px #fff,
+    0 0 350px #fff,
+    0 0 400px #fff,
+    0 0 450px #fff,
+    0 0 500px #fff,
+    0 0 550px #fff,
+    0 0 600px #fff,
+    0 0 650px #fff;
 }
 
 .Lamp__bulb span:nth-child(1) {
@@ -30,7 +56,7 @@
     background: transparent;
     transform: rotate(335deg);
     border-bottom-right-radius: 40px;
-    box-shadow: 20px 20px 0 10px rgb(189, 87, 87);
+    box-shadow: 20px 20px 0 10px rgb(216, 210, 131);;
 }
 
 .Lamp__bulb span:nth-child(2) {
@@ -43,5 +69,5 @@
     background: transparent;
     transform: rotate(115deg);
     border-bottom-right-radius: 40px;
-    box-shadow: 20px 20px 0 10px rgb(189, 87, 87);
+    box-shadow: 20px 20px 0 10px rgb(216, 210, 131);;
 }

@@ -7,7 +7,9 @@ function Lamp() {
     const [Light, setLight] = useState(false)
 
     function handleLikeClick() {
+        const AppClassName = document.querySelector('.App');
         const soundClick = AUDIO;
+        AppClassName.classList.toggle('on')
         soundClick.play()
     }
 

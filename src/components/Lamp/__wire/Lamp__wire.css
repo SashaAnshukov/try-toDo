@@ -5,5 +5,5 @@
     width: 4px;
     height: 60px;
     background: #000;
-    
+    z-index: 1;
 }

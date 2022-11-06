@@ -1,6 +1,8 @@
 @import url('./components/App/App.css');
 
 @import url('./components/CaseItem/__logo/CaseItem_logo.css');
+@import url('./components/CaseItem/__form/CaseItem__form.css');
+@import url('./components/CaseItem/__input/CaseItem__input.css');
 
 @import url('./components/Lamp/__wire/Lamp__wire.css');
 @import url('./components/Lamp/__bulb/Lamp__bulb.css');

@@ -1,5 +1,5 @@
 .App {
-    background-color: rgba(87, 87, 87, 0.667);
+    background-color: rgb(44, 44, 44);
     color: #fff;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -13,4 +13,10 @@
     -moz-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    /*background: radial-gradient(at 86% 20%,#555, #111);
+    background-attachment: fixed;*/
+    margin: 0;
 }
