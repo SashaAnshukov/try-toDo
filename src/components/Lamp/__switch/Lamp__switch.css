@@ -1,6 +1,6 @@
 /* The switch - the box around the slider */
 .Lamp__switch {
-    position: relative;
+    position: fixed;
     display: inline-block;
     width: 60px;
     height: 34px;

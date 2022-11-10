@@ -24,6 +24,7 @@ function Lamp() {
                 <label className="Lamp__switch">
                     <input type="checkbox" onChange={handleLikeClick} />
                     <span className="slider round"></span>
+                    <p>Подсветить важные задачи</p>
                 </label>
             </div>
         </div>
