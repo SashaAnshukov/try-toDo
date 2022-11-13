@@ -4,7 +4,6 @@ import Lamp from '../Lamp/Lamp';
 
 function App() {
 
-  
 
 
   return (

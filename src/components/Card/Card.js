@@ -1,7 +1,6 @@
 import {useState} from 'react';
-import Card from '../Card/Card';
 
-function CaseItem({onCardLike, onCardDelete, card}) {
+function Card({onCardLike, onCardDelete, card}) {
     
     const [doSomething, setDoSomething] = useState('');
     const [toDo, setToDo] = useState([]);
@@ -14,31 +13,32 @@ function CaseItem({onCardLike, onCardDelete, card}) {
       // Передаём значения управляемых компонентов во внешний обработчик
     }
 
-    function handleChangeTarget(e) {
+    function handleChangeInput(e) {
         setDoSomething(e.target.value);
     }
 
     function addTodo() {
-        setToDo([toDo, ...toDo]);
+        if (toDo !== "") {
+            setToDo([...toDo, toDo]);
+            setToDo("");
+        }
     };
 
     function handleLikeClick() {
         onCardLike(card);
     }
 
-    function handleDeleteClick (card) {
-        console.log(card)
-        setToDo((card) => card.filter((i) => i._id !== card._id));
+    function handleDeleteClick () {
+        onCardDelete (card);
     }
 
     return (
         <>
             <div className="CaseItem">
-                <header className="CaseItem_Logo">ToDo plan</header>
                 
                 <form className="CaseItem__form" onSubmit={handleSubmit}>
                     <input
-                        onChange={handleChangeTarget}
+                        onChange={handleChangeInput}
                         placeholder="Добавь цель"
                         required minLength="2" maxLength="40" type="text"
                         name ="name" className="CaseItem__input CaseItem__input_text_name"
@@ -48,7 +48,7 @@ function CaseItem({onCardLike, onCardDelete, card}) {
                         type ="submit"
                         aria-label="saveButton"
                         className="CaseItem__button CaseItem__button_invalid">
-                        Save
+                        addTodo
                     </button>
                     <button
                         onClick={handleLikeClick}
@@ -60,20 +60,12 @@ function CaseItem({onCardLike, onCardDelete, card}) {
                         onClick={handleDeleteClick}
                         className = "CaseItemDeleteButton"
                         type ="button" aria-label="delete">
-                        Done
+                        Delete
                     </button>
                 </form>
-                
-                <section className="elements">
-                    {toDo.map (card => {
-                        return <Card 
-                            onCardLike = {onCardLike}
-                            onCardDelete ={handleDeleteClick} card={card} key = {card._id}/>
-                    })}
-                </section>
             </div>
         </>
     );
 }
 
-export default CaseItem;
+export default Card;
