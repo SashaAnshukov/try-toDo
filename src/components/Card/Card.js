@@ -1,8 +1,13 @@
 import {useState} from 'react';
 
-function Card({onCardLike, onCardDelete, card}) {
-    
-    const MainItemLikeButtonClassName = "MainItem__mesto-like";
+function Card({onCardEdit, onCardDelete, card}) {
+
+
+    const [important, setImportant] = useState(false); //стэйт для кнопки важных задач
+
+    const IportantCardClassName = (
+        `Card__button_important' ${important ? 'Card__button_important' : 'Card__button_important-active'} `
+    );
 
     function handleSubmitCard(e) {
       // Запрещаем браузеру переходить по адресу формы
@@ -10,8 +15,12 @@ function Card({onCardLike, onCardDelete, card}) {
       // Передаём значения управляемых компонентов во внешний обработчик
     }
 
-    function handleLikeClick() {
-        onCardLike(card);
+    function handleImportantClick() {
+        !important ? setImportant(true) : setImportant(false)
+    }
+
+    function handleEditClick() {
+        onCardEdit (card)
     }
 
     function handleDeleteClick () {
@@ -21,20 +30,24 @@ function Card({onCardLike, onCardDelete, card}) {
     return (
         <>
             <div className="Main">
-                
                 <form className="Main__form" onSubmit={handleSubmitCard}>
-                <h2 className="rectangle__mesto-text">{card.doSomething}</h2>
+                    <h2 className="rectangle__mesto-text">{card.doSomething}</h2>
                     <button
-                        onClick={handleLikeClick}
-                        className = {MainItemLikeButtonClassName}
-                        type ="button" aria-label= "add-favorite">
-                        Like
+                        onClick = {handleImportantClick}
+                        className = {IportantCardClassName}
+                        type ="button" aria-label= "add-important">
                     </button>
+                    
                     <button
                         onClick={handleDeleteClick}
-                        className = "MainItemDeleteButton"
+                        className = "Card__button_delete"
+                        type ="button" aria-label="edit">
+                    </button>
+                    
+                    <button
+                        onClick={handleEditClick}
+                        className = "Card__button_edit"
                         type ="button" aria-label="delete">
-                        Delete
                     </button>
                 </form>
             </div>

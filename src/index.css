@@ -7,3 +7,9 @@
 @import url('./components/Lamp/__wire/Lamp__wire.css');
 @import url('./components/Lamp/__bulb/Lamp__bulb.css');
 @import url('./components/Lamp/__switch/Lamp__switch.css');
+
+@import url('./components/Card/__button/Card__button.css');
+@import url('./components/Card/__button/_important/Card__button_important.css');
+@import url('./components/Card/__button/_important/_active/Card__button_important-active.css');
+@import url('./components/Card/__button/_edit/Card__button_edit.css');
+@import url('./components/Card/__button/_delete/Card__button_delete.css');

@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import {Reorder} from 'framer-motion'
 import Card from '../Card/Card';
 
-function Main({onCardLike}) {
+function Main() {
     
     const [cards, setCards] = useState([]); // Стейт для массива карточек
     const [doSomething, setDoSomething] = useState(''); // Стейт, в котором содержится значение инпута
@@ -27,6 +28,10 @@ function Main({onCardLike}) {
         }
     };
 
+    function onCardEdit (card) {
+        setCards((cards) => cards.filter((i) => i.id !== card.id));
+    }
+
     function onCardDelete (card) {
         setCards((cards) => cards.filter((i) => i.id !== card.id));
     }
@@ -51,13 +56,14 @@ function Main({onCardLike}) {
                     </button>
                 </form>
                 
-                <section className="elements">
+                <Reorder.Group axis="y" values={cards} onReorder={setCards}>
                     {cards.map (card => {
-                        return <Card 
-                            onCardLike = {onCardLike} addCard = {onAddCard}
-                            onCardDelete ={onCardDelete} card={card} key = {card.id}/>
+                        return <Reorder.Item value={card} key={card.id} >
+                            {<Card addCard = {onAddCard} onCardEdit = {onCardEdit}
+                                onCardDelete ={onCardDelete} card={card} key={card.id} />}
+                        </Reorder.Item>
                     })}
-                </section>
+                </Reorder.Group>
             </div>
         </>
     );

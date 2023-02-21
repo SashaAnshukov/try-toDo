@@ -4,7 +4,8 @@
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     width: 100%;
-    height: 100vw;
+    min-height: 100vw;
+    height: 100%;
     margin: 0;
     padding-top: 0.1px;
     padding-bottom: 0.1px;
