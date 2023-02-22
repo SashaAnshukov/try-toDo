@@ -1,0 +1,12 @@
+.Card__button_edit-active {
+    background: url("../../../../images/Edit.svg");
+    background-color: blue;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    width: 64px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+}

@@ -28,10 +28,6 @@ function Main() {
         }
     };
 
-    function onCardEdit (card) {
-        setCards((cards) => cards.filter((i) => i.id !== card.id));
-    }
-
     function onCardDelete (card) {
         setCards((cards) => cards.filter((i) => i.id !== card.id));
     }
@@ -56,12 +52,15 @@ function Main() {
                     </button>
                 </form>
                 
-                <Reorder.Group axis="y" values={cards} onReorder={setCards}>
+                <Reorder.Group as= "ul" axis="y" values={cards} onReorder={setCards}>
                     {cards.map (card => {
                         return <Reorder.Item value={card} key={card.id} >
-                            {<Card addCard = {onAddCard} onCardEdit = {onCardEdit}
-                                onCardDelete ={onCardDelete} card={card} key={card.id} />}
-                        </Reorder.Item>
+                            {<Card 
+                                onCardDelete ={onCardDelete} 
+                                card={card}
+                                key={card.id} 
+                            />}
+                        </ Reorder.Item>
                     })}
                 </Reorder.Group>
             </div>
