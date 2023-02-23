@@ -62,14 +62,20 @@ function Card({onCardDelete, card}) {
                     </button>
                     
                     <button
-                        onClick={handleDeleteClick}
-                        className = "Card__button_delete"
-                        type ="button" aria-label="edit">
-                    </button>
-                    
-                    <button
                         onClick={handleEditClick}
                         className = "Card__button_edit"
+                        type ="button" aria-label="delete">
+                    </button>
+
+                    <button
+                        onClick={handleDeleteClick}
+                        className = "Card__button_add-file"
+                        type ="button" aria-label="add-file">
+                    </button>
+
+                    <button
+                        onClick={handleDeleteClick}
+                        className = "Card__button_delete"
                         type ="button" aria-label="delete">
                     </button>
                 </form>

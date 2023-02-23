@@ -46,9 +46,8 @@ function Main() {
                     />
                     <button
                         type ="submit"
-                        aria-label="saveButton"
-                        className="Main__button Main__button_invalid">
-                        Add
+                        aria-label="addButton"
+                        className="Main__button">
                     </button>
                 </form>
                 
