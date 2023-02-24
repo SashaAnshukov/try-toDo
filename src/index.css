@@ -2,6 +2,7 @@
 
 @import url('./components/Main/__logo/Main__logo.css');
 @import url('./components/Main/__form/Main__form.css');
+@import url('./components/Main/__form/_light/Main__form_light.css');
 @import url('./components/Main/__input/Main__input.css');
 
 @import url('./components/Lamp/__wire/Lamp__wire.css');
@@ -9,6 +10,7 @@
 @import url('./components/Lamp/__switch/Lamp__switch.css');
 
 @import url('./components/Main/__button/Main__button.css');
+
 
 @import url('./components/Card/__info/Card_info.css');
 

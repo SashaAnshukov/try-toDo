@@ -1,6 +1,5 @@
 .Card__button_edit-active {
     background: url("../../../../images/Edit.svg");
-    background-color: blue;
     border: none;
     background-position: center;
     background-repeat: no-repeat;

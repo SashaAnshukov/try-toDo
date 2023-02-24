@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {Reorder} from 'framer-motion'
 import Card from '../Card/Card';
 
-function Main() {
+function Main({light}) {
     
     const [cards, setCards] = useState([]); // Стейт для массива карточек
     const [doSomething, setDoSomething] = useState(''); // Стейт, в котором содержится значение инпута
@@ -51,10 +51,11 @@ function Main() {
                     </button>
                 </form>
                 
-                <Reorder.Group as= "ul" axis="y" values={cards} onReorder={setCards}>
+                <Reorder.Group as= "div" axis="y" values={cards} onReorder={setCards}>
                     {cards.map (card => {
                         return <Reorder.Item value={card} key={card.id} >
                             {<Card 
+                                light={light}
                                 onCardDelete ={onCardDelete} 
                                 card={card}
                                 key={card.id} 

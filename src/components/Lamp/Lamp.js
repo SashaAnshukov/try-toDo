@@ -2,15 +2,15 @@ import {useState} from 'react';
 import AUDIO from '../../audio/click';
 
 
-function Lamp() {
+function Lamp({turnOnTheLight}) {
 
-    const [Light, setLight] = useState(false)
-
-    function handleLikeClick() {
+    function handleLightClick() {
         const AppClassName = document.querySelector('.App');
         const soundClick = AUDIO;
         AppClassName.classList.toggle('on')
         soundClick.play()
+        turnOnTheLight()
+        console.log('clickLamp')
     }
 
     return (
@@ -22,7 +22,7 @@ function Lamp() {
                     <span></span>
                 </div>
                 <label className="Lamp__switch">
-                    <input type="checkbox" onChange={handleLikeClick} />
+                    <input type="checkbox" onChange={handleLightClick} />
                     <span className="slider round"></span>
                     <p>Подсветить важные задачи</p>
                 </label>

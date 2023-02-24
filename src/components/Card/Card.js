@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function Card({onCardDelete, card}) {
+function Card({light, onCardDelete, card}) {
 
 
     const [important, setImportant] = useState(false); //стэйт для кнопки важных задач
@@ -11,6 +11,10 @@ function Card({onCardDelete, card}) {
     const IportantCardClassName = (
         `Card__button_important' ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
     );
+
+    const MainFormClassName = (
+        `Main__form' ${light&&important ? 'Main__form_light' : 'Main__form'} `
+    )
 
     function handleSubmitCard(e) {
       // Запрещаем браузеру переходить по адресу формы
@@ -47,7 +51,7 @@ function Card({onCardDelete, card}) {
     return (
         <>
             <div className="Main">
-                <form className="Main__form" onSubmit={handleSubmitCard}>
+                <form className={MainFormClassName} onSubmit={handleSubmitCard}>
                     <input 
                         className="Card_info"
                         type="text"
