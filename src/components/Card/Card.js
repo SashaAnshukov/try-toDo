@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 
 function Card({light, onCardDelete, card}) {
 
@@ -8,12 +8,14 @@ function Card({light, onCardDelete, card}) {
     const [disabledInput, setDisabledInput] = useState(true); //стэйт для инпута
     const [toggle, setToggle] = useState(true); //стэйт для кнопки релактирования
 
+    const InputEl = useRef(null);
+
     const IportantCardClassName = (
         `Card__button_important' ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
     );
 
     const MainFormClassName = (
-        `Main__form' ${light&&important ? 'Main__form_light' : 'Main__form'} `
+        `Main__form' ${light && important ? 'Main__form_light' : 'Main__form'} `
     )
 
     function handleSubmitCard(e) {
@@ -41,6 +43,11 @@ function Card({light, onCardDelete, card}) {
         //console.log(toggle)
         toggle ? setDisabledInput(false) && handleChangeTask() : setDisabledInput(true)
         
+    }
+
+    function handleAddFile (e) {
+        e.preventDefault();
+        console.log(InputEl.current.files)
     }
 
     function handleDeleteClick () {
@@ -71,11 +78,10 @@ function Card({light, onCardDelete, card}) {
                         type ="button" aria-label="delete">
                     </button>
 
-                    <button
-                        onClick={handleDeleteClick}
-                        className = "Card__button_add-file"
-                        type ="button" aria-label="add-file">
-                    </button>
+                    <div className = "Card__button_add-file" >
+                        <input ref={InputEl} type ="file" />
+                        <button type ="submit" onClick={handleAddFile}>Upload</button>
+                    </div>
 
                     <button
                         onClick={handleDeleteClick}

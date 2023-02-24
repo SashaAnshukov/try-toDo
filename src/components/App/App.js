@@ -9,7 +9,7 @@ function App() {
 
   function turnOnTheLight() {
     setLight(!light)
-    console.log(light)
+    //console.log(light)
   }
 
 

@@ -10,7 +10,7 @@ function Lamp({turnOnTheLight}) {
         AppClassName.classList.toggle('on')
         soundClick.play()
         turnOnTheLight()
-        console.log('clickLamp')
+        //console.log('clickLamp')
     }
 
     return (
