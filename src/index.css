@@ -20,4 +20,5 @@
 @import url('./components/Card/__button/_edit/Card__button_edit.css');
 @import url('./components/Card/__button/_edit-active/Card__button_edit-active.css');
 @import url('./components/Card/__button/_add-file/Card__button_add-file.css');
+@import url('./components/Card/__button/_upload/Card__button_upload.css');
 @import url('./components/Card/__button/_delete/Card__button_delete.css');

@@ -7,8 +7,10 @@ function Card({light, onCardDelete, card}) {
     const [changeDoSomething, setChangeDoSomething] = useState(card.doSomething);
     const [disabledInput, setDisabledInput] = useState(true); //стэйт для инпута
     const [toggle, setToggle] = useState(true); //стэйт для кнопки релактирования
+    const [upload, setUpload] = useState(true); 
 
     const InputEl = useRef(null);
+    console.log(InputEl.current)
 
     const IportantCardClassName = (
         `Card__button_important' ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
@@ -39,15 +41,23 @@ function Card({light, onCardDelete, card}) {
     }
 
     function handleEditClick() {
-        setToggle(!toggle); // при каждом клике на кнопку карандаша меняем стэйт true/false
+        setToggle(!toggle); // при каждом клике на кнопку карандаша(редактирования) меняем стэйт true/false
         //console.log(toggle)
         toggle ? setDisabledInput(false) && handleChangeTask() : setDisabledInput(true)
         
     }
 
+    const CardButtonUploadClassName = (
+        `Card__button_upload' ${upload? 'Card__button_upload' : 'Card__button_upload-hide'} `
+    )
+
     function handleAddFile (e) {
         e.preventDefault();
-        console.log(InputEl.current.files)
+        console.log(InputEl.current)
+
+        /*console.log(InputEl.current.files[0])*/
+        InputEl.current !== null ? setUpload(false) : setUpload(true);
+        
     }
 
     function handleDeleteClick () {
@@ -78,10 +88,10 @@ function Card({light, onCardDelete, card}) {
                         type ="button" aria-label="delete">
                     </button>
 
-                    <div className = "Card__button_add-file" >
-                        <input ref={InputEl} type ="file" />
-                        <button type ="submit" onClick={handleAddFile}>Upload</button>
-                    </div>
+                    <label className = "Card__button_add-file">
+                        <input className ="Card__button_add-file-hide" ref={InputEl} type ="file" required />
+                        <button className = {CardButtonUploadClassName} type ="submit" onClick={handleAddFile}>Upload</button>
+                    </label>
 
                     <button
                         onClick={handleDeleteClick}

@@ -9,3 +9,7 @@
     outline: none;
     cursor: pointer;
 }
+
+.Card__button_add-file-hide {
+    display:none
+}
