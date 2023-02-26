@@ -11,5 +11,6 @@
 }
 
 .Card__button_add-file-hide {
-    display:none
+    opacity: 0;
+
 }

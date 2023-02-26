@@ -1,27 +1,30 @@
 export class Api {
+
+    constructor({adress}) {
+        this._adress = adress;
+    }
     
-upload (file, onSuccess, onFailure) {
-    const data = new FormData()
-    data.append('file', file)
+    upload (file) {
+        const data = new FormData()
+        data.append('file', file)
 
-    return fetch('https://file.io/?expires=1w', {
-        method: 'POST',
-        mode: 'cors',
-        body: data,
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json()
-        } else {
-            throw new Error(response.status)
-        }
-    })
-    .then(data => onSuccess(data))
-    .catch(error => {
-        onFailure()
-    })
+        return fetch(this._adress, {
+            method: 'POST',
+            mode: 'cors',
+            body: data,
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                throw new Error(response.status)
+            }
+        })
+    }
 }
 
-}
+const api = new Api({
+    adress: 'https://file.io/?expires=1w'
+})
 
-export default Api
+export default api

@@ -1,4 +1,5 @@
 import {useState, useRef} from 'react';
+import api from '../../utils/Api';
 
 function Card({light, onCardDelete, card}) {
 
@@ -7,10 +8,11 @@ function Card({light, onCardDelete, card}) {
     const [changeDoSomething, setChangeDoSomething] = useState(card.doSomething);
     const [disabledInput, setDisabledInput] = useState(true); //стэйт для инпута
     const [toggle, setToggle] = useState(true); //стэйт для кнопки релактирования
-    const [upload, setUpload] = useState(true); 
+    const [upload, setUpload] = useState(false); 
+    const [linkk, setLinkk] = useState(''); 
 
     const InputEl = useRef(null);
-    console.log(InputEl.current)
+    console.log(InputEl)
 
     const IportantCardClassName = (
         `Card__button_important' ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
@@ -44,21 +46,35 @@ function Card({light, onCardDelete, card}) {
         setToggle(!toggle); // при каждом клике на кнопку карандаша(редактирования) меняем стэйт true/false
         //console.log(toggle)
         toggle ? setDisabledInput(false) && handleChangeTask() : setDisabledInput(true)
-        
     }
 
     const CardButtonUploadClassName = (
-        `Card__button_upload' ${upload? 'Card__button_upload' : 'Card__button_upload-hide'} `
+        `Card__button_upload' ${handleChangeInput && upload? 'Card__button_upload' : 'Card__button_upload-hide'} `
     )
 
-    function handleAddFile (e) {
+    function handleChangeInput (e) {
         e.preventDefault();
-        console.log(InputEl.current)
-
-        /*console.log(InputEl.current.files[0])*/
-        InputEl.current !== null ? setUpload(false) : setUpload(true);
+        console.log(InputEl.current.value)
+        setUpload(true)
+        //console.log(InputEl.current.files)
+        InputEl.current.files.length !== 0 ? setUpload(true) : setUpload(false);
         
     }
+
+    function handleAddFile () {
+        api.upload(InputEl.current.files[0]).then(res => {
+            console.log(res.link);
+            setLinkk(res.link)
+        })
+        .catch(err => {
+            console.log (`Ошибка: ${err}`)
+        })
+        setUpload(false)
+    }
+
+    const CardLinkClassName = (
+        `Card__link' ${linkk ? 'Card__link' : 'Card__link-hide'} `
+    )
 
     function handleDeleteClick () {
         onCardDelete (card);
@@ -89,8 +105,20 @@ function Card({light, onCardDelete, card}) {
                     </button>
 
                     <label className = "Card__button_add-file">
-                        <input className ="Card__button_add-file-hide" ref={InputEl} type ="file" required />
-                        <button className = {CardButtonUploadClassName} type ="submit" onClick={handleAddFile}>Upload</button>
+                        <input
+                            className ="Card__button_add-file-hide"
+                            type ="file" required 
+                            onChange={handleChangeInput}
+                            className ="Card__button_add-file-hide"
+                            ref={InputEl}
+                        />
+                        <button 
+                            className = {CardButtonUploadClassName}
+                            type ="submit" 
+                            onClick={handleAddFile} >
+                                Download
+                        </button>
+                        <a className = {CardLinkClassName} href = {linkk}> ссылка </a>
                     </label>
 
                     <button

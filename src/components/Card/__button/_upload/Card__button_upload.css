@@ -3,5 +3,5 @@
 }
 
 .Card__button_upload-hide {
-    display:none
+    opacity: 0;
 }
