@@ -1,0 +1,6 @@
+.Card__button_add-file-ready {
+    background: url("../../../../images/File-download_green.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+}

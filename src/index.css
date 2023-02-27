@@ -13,7 +13,6 @@
 
 
 @import url('./components/Card/__info/Card_info.css');
-@import url('./components/Card/__link/Card__link.css');
 
 @import url('./components/Card/__button/Card__button.css');
 @import url('./components/Card/__button/_important/Card__button_important.css');
@@ -21,5 +20,7 @@
 @import url('./components/Card/__button/_edit/Card__button_edit.css');
 @import url('./components/Card/__button/_edit-active/Card__button_edit-active.css');
 @import url('./components/Card/__button/_add-file/Card__button_add-file.css');
+@import url('./components/Card/__button/_add-file-ready/Card__button_add-file-ready.css');
 @import url('./components/Card/__button/_upload/Card__button_upload.css');
+@import url('./components/Card/__button/_link/Card__button_link.css');
 @import url('./components/Card/__button/_delete/Card__button_delete.css');

@@ -1,10 +1,10 @@
-.Card__button_add-file {
-    background: url("../../../../images/File-add.svg");
+.Card__button_link {
+    background: url("../../../../images/File-search_yellow.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
 }
 
-.Card__button_add-file-hide {
+.Card__button_link-hide {
     display: none;
 }
