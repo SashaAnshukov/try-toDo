@@ -18,6 +18,10 @@ function Card({light, onCardDelete, card}) {
         `Card__button ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
     );
 
+    const CardButtonEditClassName = (
+        `Card__button ${toggle ? 'Card__button_edit' : 'Card__button_edit-active'} `
+    );
+
     const MainFormClassName = (
         `Main__form ${light && important ? 'Main__form_light' : 'Main__form'} `
     )
@@ -48,8 +52,12 @@ function Card({light, onCardDelete, card}) {
         toggle ? setDisabledInput(false) && handleChangeTask() : setDisabledInput(true)
     }
 
+    const CardInfoClassName = (
+        `Card__info ${!toggle ? 'Card__info_focus' : 'Card__info'} `
+    )
+
     const CardButtonUploadClassName = (
-        `Card__button ${handleChangeInput && upload? 'Card__button_upload' : 'Card__button_upload-hide'} `
+        `Card__button ${handleChangeInput && upload ? 'Card__button_upload' : 'Card__button_upload-hide'} `
     )
 
     const CardButtonAddFileClassName = (
@@ -92,21 +100,27 @@ function Card({light, onCardDelete, card}) {
             <div className="Main">
                 <form className={MainFormClassName} onSubmit={handleSubmitCard}>
                     <input 
-                        className="Card_info"
+                        className={CardInfoClassName}
+                        rows="3"
+                        cols="30"
+                        minLength="1"
+                        maxLength="54"
                         type="text"
                         value={card.doSomething || changeDoSomething}
                         disabled = {disabledInput}
                         onChange={handleChangeTask}
                     />
                     <button
-                        onClick = {handleImportantClick}
                         className = {IportantCardClassName || ''}
-                        type ="button" aria-label= "add-important" >
+                        type ="button"
+                        aria-label= "add-important"
+                        onClick = {handleImportantClick} >
                     </button>
                     
                     <button
-                        className = "Card__button_edit"
-                        type ="button" aria-label="edit"
+                        className = {CardButtonEditClassName}
+                        type ="button"
+                        aria-label="edit"
                         onClick={handleEditClick} >
                     </button>
 
@@ -127,16 +141,23 @@ function Card({light, onCardDelete, card}) {
                         <button 
                             className = {CardButtonUploadClassName}
                             type ="submit" 
+                            aria-label="download"
                             onClick={handleAddFile} >
                                 Download
                         </button>
                         
                     </label>
-                    <a className = {CardLinkClassName} href = {linkk} target="_blank" rel="noopener noreferrer"/>
+                    <a 
+                        className = {CardLinkClassName}
+                        href = {linkk}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                    </a>
                     <button
-                        onClick={handleDeleteClick}
                         className = "Card__button Card__button_delete"
-                        type ="button" aria-label="delete">
+                        type ="button"
+                        aria-label="delete"
+                        onClick={handleDeleteClick} >
                     </button>
                 </form>
             </div>

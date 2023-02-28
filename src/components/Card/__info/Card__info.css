@@ -1,0 +1,17 @@
+.Card__info {
+    height: 46px;
+    width: 279px;
+    background-color: rgb(44, 44, 44);
+    border: 0;
+    margin: 10px 20px 10px 20px;
+    align-self: center;
+    color: beige;
+    font-size: 18px;
+    resize: none;
+}
+
+.Card__info_focus {
+    border-bottom: 1px solid #039D00;
+    outline: none;
+    transition: all .55s;
+}

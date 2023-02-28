@@ -5,3 +5,8 @@
     outline: none;
     cursor: pointer;
 }
+
+.Card__button:hover {
+    transition: 0.55s all ease-in-out;
+    transform: scale(1.1);
+}

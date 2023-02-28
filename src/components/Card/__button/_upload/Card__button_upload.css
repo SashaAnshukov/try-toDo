@@ -1,14 +1,15 @@
 .Card__button_upload {
     font-size: 11px;
-    padding: 0;
-    margin: 100px auto 0 auto;
-    width: 64px;
+    margin: 60px auto 0 auto;
     height: 20px;
-    border: none;
     border-radius: 10px;
     background-color: #039D00;
     color: #FFFF;
-    cursor: pointer;
+}
+
+.Card__button_upload:hover {
+    transition: 0 s all ease-in-out;
+    transform: scale(1.0);
 }
 
 .Card__button_upload-hide {

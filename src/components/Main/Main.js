@@ -35,14 +35,14 @@ function Main({light}) {
     return (
         <>
             <div className="Main">
-                <header className="Main__logo">ToDo plan</header>
+                <header className="Main__logo">ToDo list</header>
                 
                 <form className="Main__form" onSubmit={handleSubmit}>
                     <input
                         onChange={handleChangeInput}
                         placeholder="Добавь цель"
                         required minLength="2" maxLength="400" type="text"
-                        name ="name" className="Main__input Main__input_text_name"
+                        name ="name" className="Card__info"
                     />
                     <button
                         type ="submit"

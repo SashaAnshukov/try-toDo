@@ -4,13 +4,3 @@
     background-repeat: no-repeat;
     background-size: 70%;
 }
-
-.Card__button_important:hover {
-    background: url("../../../../images/Flash_yellow.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-size: 70%;
-    transition: 0.7s all ease-in-out;
-    transform: scale(1.2);
-}
