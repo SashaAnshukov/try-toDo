@@ -1,7 +1,9 @@
 .Card__info {
     height: 46px;
     width: 279px;
+    padding: 0;
     background-color: rgb(44, 44, 44);
+    box-sizing: border-box;
     border: 0;
     margin: 10px 20px 10px 20px;
     align-self: center;

@@ -2,8 +2,11 @@
 .Lamp__switch {
     position: fixed;
     display: inline-block;
-    width: 60px;
+    max-width: 60px;
     height: 34px;
+    top: 100px;
+    left: 150px;
+    width: 80px;
 }
 
   /* Hide default HTML checkbox */
@@ -39,11 +42,11 @@
 }
 
 input:checked + .slider {
-    background-color: salmon;
+    background-color: #FCE308;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px salmon;
+    box-shadow: 0 0 1px #FCE308;
 }
 
 input:checked + .slider:before {

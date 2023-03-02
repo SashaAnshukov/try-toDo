@@ -24,7 +24,7 @@ function Lamp({turnOnTheLight}) {
                 <label className="Lamp__switch">
                     <input type="checkbox" onChange={handleLightClick} />
                     <span className="slider round"></span>
-                    <p>Подсветить важные задачи</p>
+                    <p className="Lamp__description">highlight important tasks</p>
                 </label>
             </div>
         </div>

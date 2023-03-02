@@ -8,6 +8,7 @@
 @import url('./components/Lamp/__wire/Lamp__wire.css');
 @import url('./components/Lamp/__bulb/Lamp__bulb.css');
 @import url('./components/Lamp/__switch/Lamp__switch.css');
+@import url('./components/Lamp/__description/Lamp__description.css');
 
 @import url('./components/Main/__button/Main__button.css');
 

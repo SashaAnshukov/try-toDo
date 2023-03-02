@@ -23,7 +23,7 @@ function Card({light, onCardDelete, card}) {
     );
 
     const MainFormClassName = (
-        `Main__form ${light && important ? 'Main__form_light' : 'Main__form'} `
+        `Main__form ${light && important ? 'Main__form_light' : ''} `
     )
 
     function handleSubmitCard(e) {
@@ -53,7 +53,7 @@ function Card({light, onCardDelete, card}) {
     }
 
     const CardInfoClassName = (
-        `Card__info ${!toggle ? 'Card__info_focus' : 'Card__info'} `
+        `Card__info ${!toggle ? 'Card__info_focus' : ''}`
     )
 
     const CardButtonUploadClassName = (

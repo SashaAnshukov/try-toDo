@@ -1,7 +1,9 @@
 .Card__button {
     border: none;
-    width: 64px;
+    width: 54px;
+    height: 54px;
     padding: 0;
+    align-self: center;
     outline: none;
     cursor: pointer;
 }
