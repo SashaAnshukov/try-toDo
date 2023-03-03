@@ -1,18 +1,21 @@
 import {useState, useEffect} from 'react';
+import {observer} from 'mobx-react-lite';
 import {Reorder} from 'framer-motion'
 import Card from '../Card/Card';
+import todo from '../../store/todo'
 
-function Main({light}) {
+/*function Main({light}) {*/
+const Main = observer ( ({light}) => {
     
-    const [cards, setCards] = useState([]); // Стейт для массива карточек
-    const [doSomething, setDoSomething] = useState(''); // Стейт, в котором содержится значение инпута
+    /*const [cards, setCards] = useState([]); // Стейт для массива карточек
+    const [doSomething, setDoSomething] = useState(''); // Стейт, в котором содержится значение инпута*/
 
     // Обработчики изменения инпута обновляет стейт
-    function handleChangeInput(e) {
+    /*function handleChangeInput(e) {
         setDoSomething(e.target.value);
-    }
+    }*/
 
-    function handleSubmit(e) {
+    /*function handleSubmit(e) {
         e.preventDefault(); // Запрещаем браузеру переходить по адресу формы
         const dataCard = {}; // Передаём значения управляемых компонентов во внешний обработчик
         dataCard.doSomething = doSomething;
@@ -20,9 +23,9 @@ function Main({light}) {
         //console.log(dataCard.id)
         onAddCard(dataCard);
         e.target.reset() //очищаем инпут
-    }
+    }*/
 
-    function onAddCard(newCard) {
+    /*function onAddCard(newCard) {
         if (doSomething !== '') {
             setCards([newCard, ...cards]);
         }
@@ -30,16 +33,29 @@ function Main({light}) {
 
     function onCardDelete (card) {
         setCards((cards) => cards.filter((i) => i.id !== card.id));
-    }
+    }*/
+
+    /*<Reorder.Group as= "div" axis="y" values={cards} onReorder={setCards}>
+                    {cards.map (card => {
+                        return <Reorder.Item value={card} key={card.id} >
+                            {<Card 
+                                light={light}
+                                onCardDelete ={onCardDelete} 
+                                card={card}
+                                key={card.id} 
+                            />}
+                        </ Reorder.Item>
+                    })}
+                </Reorder.Group>*/
 
     return (
         <>
             <div className="Main">
                 <header className="Main__logo">ToDo list</header>
                 
-                <form className="Main__form" onSubmit={handleSubmit}>
+                <form className="Main__form" onSubmit={todo.handleSubmit}>
                     <input
-                        onChange={handleChangeInput}
+                        onChange={todo.handleChangeInput}
                         placeholder="Добавь цель"
                         required minLength="2" maxLength="400" type="text"
                         name ="name" className="Card__info"
@@ -51,12 +67,12 @@ function Main({light}) {
                     </button>
                 </form>
                 
-                <Reorder.Group as= "div" axis="y" values={cards} onReorder={setCards}>
-                    {cards.map (card => {
-                        return <Reorder.Item value={card} key={card.id} >
+                <Reorder.Group as= "div" axis="y" values={todo} onReorder={todo}>
+                    {todo.cards.map (card => {
+                        return <Reorder.Item value={todo} key={card.id} >
                             {<Card 
                                 light={light}
-                                onCardDelete ={onCardDelete} 
+                                onCardDelete ={todo.onCardDelete} 
                                 card={card}
                                 key={card.id} 
                             />}
@@ -66,6 +82,7 @@ function Main({light}) {
             </div>
         </>
     );
-}
+
+})
 
 export default Main;
