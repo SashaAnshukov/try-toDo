@@ -47,6 +47,8 @@ const Main = observer ( ({light}) => {
                         </ Reorder.Item>
                     })}
                 </Reorder.Group>*/
+        
+        console.log(todo.cards)
 
     return (
         <>
@@ -67,9 +69,9 @@ const Main = observer ( ({light}) => {
                     </button>
                 </form>
                 
-                <Reorder.Group as= "div" axis="y" values={todo} onReorder={todo}>
+                <Reorder.Group as= "div" axis="y" values={todo.cards} onReorder={todo.cards }>
                     {todo.cards.map (card => {
-                        return <Reorder.Item value={todo} key={card.id} >
+                        return <Reorder.Item value={todo.card} key={card.id} >
                             {<Card 
                                 light={light}
                                 onCardDelete ={todo.onCardDelete} 

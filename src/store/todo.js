@@ -23,15 +23,16 @@ class Todo {
         e.target.reset() //очищаем инпут
     }
 
-    onAddCard (card) {
+    onAddCard = (card) => {
         if (this.doSomething !== '') {
             this.cards.push(card)
         }
     };
 
-    onCardDelete = (id) => {
-        this.todos = this.todos.filter(todo => todo.id !== id);
+    onCardDelete = (card) => {
+        this.cards = this.cards.filter((i) => i.id !== card.id);
     }
+    
 }
 
 export default new Todo()
