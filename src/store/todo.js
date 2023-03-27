@@ -1,7 +1,6 @@
 import {makeAutoObservable} from 'mobx';
 
 class Todo {
-
     cards = [];
     doSomething = '';
 

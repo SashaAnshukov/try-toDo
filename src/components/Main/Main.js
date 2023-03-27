@@ -71,7 +71,7 @@ const Main = observer ( ({light}) => {
                 
                 <Reorder.Group as= "div" axis="y" values={todo.cards} onReorder={todo.cards }>
                     {todo.cards.map (card => {
-                        return <Reorder.Item value={todo.card} key={card.id} >
+                        return <Reorder.Item value={todo.cards} key={card.id} >
                             {<Card 
                                 light={light}
                                 onCardDelete ={todo.onCardDelete} 
