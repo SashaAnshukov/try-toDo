@@ -12,7 +12,6 @@ function Card({light, onCardDelete, card}) {
     const [linkk, setLinkk] = useState(''); 
 
     const InputEl = useRef(null);
-    console.log(InputEl)
 
     const IportantCardClassName = (
         `Card__button ${!important ? 'Card__button_important' : 'Card__button_important-active'} `
@@ -68,9 +67,9 @@ function Card({light, onCardDelete, card}) {
 
     function handleChangeInput (e) {
         e.preventDefault();
-        console.log(InputEl.current.value)
         setUpload(true)
         //console.log(InputEl.current.files)
+         //console.log(InputEl.current.value)
         InputEl.current.files.length !== 0 ? setUpload(true) : setUpload(false);
         
     }
@@ -94,7 +93,6 @@ function Card({light, onCardDelete, card}) {
         onCardDelete (card);
     }
     
-
     return (
         <>
             <div className="Main">
